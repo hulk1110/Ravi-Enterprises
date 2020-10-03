@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ravi-enterprises": {
+    "foketmelo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ravi-enterprises",
+            "outputPath": "dist/foketmelo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ravi-enterprises:build"
+            "browserTarget": "foketmelo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ravi-enterprises:build:production"
+              "browserTarget": "foketmelo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ravi-enterprises:build"
+            "browserTarget": "foketmelo:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ravi-enterprises:serve"
+            "devServerTarget": "foketmelo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ravi-enterprises:serve:production"
+              "devServerTarget": "foketmelo:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "ravi-enterprises"
+  "defaultProject": "foketmelo"
 }

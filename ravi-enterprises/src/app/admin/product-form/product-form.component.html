@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-6">
+    <form #f="ngForm" (ngSubmit)="save(f.value)">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input #title="ngModel" [(ngModel)]="product.title" name="title" id="title" type="text" class="form-control" required title>
+        <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+
+          Title is required.
+        </div>
+
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="price">price</label>
+        <div class="input-group">
+          <span class="input-group-text">₹</span>
+          <input #price="ngModel" [(ngModel)]="product.price" name="price" id="price" type="number" min="0" class="form-control" required
+            price oninput="validity.valid||(value='');">
+
+        </div>
+        <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
+          <div *ngIf="price.errors.required">Price is required.</div>
+          <div *ngIf="price.errors.min">Price should be 0 or higher.</div>
+        </div>
+      </div>
+<div class="form-group">
+        <label for="category">category</label>
+        <select #category="ngModel" [(ngModel)]="product.category" name="category" id="category" class="form-control" required category>
+          <option value=""></option>
+          <option *ngFor="let c of categories$ | async" [value]="c.key">
+            {{c.name}}
+          </option>
+
+        </select>
+        <div *ngIf="category.invalid && (category.dirty || category.touched)" class="alert alert-danger">
+
+          Category is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input #imageUrl="ngModel" [(ngModel)]="product.imageUrl" name="imageUrl" id="imageUrl" type="text" class="form-control" required imageUrl>
+        <div *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched)" class="alert alert-danger">
+
+          Image URL is required.
+        </div>
+      </div>
+      <button class="btn btn-primary">save</button>
+      <button type="button" (click)="delete()" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+  
+  
+  
+  <div class="col-md-6">
+    <div *ngIf="product.title" class="card" style="width: 20rem;">
+      <img class="card-img-top" [src]="product.imageUrl" *ngIf="product.imageUrl">
+      <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text">{{product.price | currency:'INR':true}}</p>
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 {
-  "name": "ravi-enterprises",
+  "name": "foketmelo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -15,10 +15,17 @@
     "@angular/common": "~8.2.0",
     "@angular/compiler": "~8.2.0",
     "@angular/core": "~8.2.0",
+    "@angular/fire": "^6.0.2",
     "@angular/forms": "~8.2.0",
+    "@angular/localize": "~8.2.0",
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "bootstrap": "^4.5.2",
+    "firebase": "^7.19.1",
+    "ng-angular8-datatable": "^0.9.11",
+    "ng-bootstrap-form-validation": "^5.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
